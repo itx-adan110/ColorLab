@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#81B29A">
+  <meta name="description" content="ColorLab — a clean professional color toolkit.">
+  <title>ColorLab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       APP SHELL
+  ========================== -->
+
+  <div id="app">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+      <a class="brand" href="#home" data-route="home" aria-label="ColorLab Home">
+        <span class="brand-mark">C</span>
+        <span class="brand-name">ColorLab</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#home" data-route="home">Home</a>
+        <a href="#studio" data-route="studio">Color</a>
+        <a href="#palettes" data-route="palettes">Palettes</a>
+        <a href="#accessibility" data-route="accessibility">Accessibility</a>
+        <a href="#extract" data-route="extract">Extract</a>
+        <a href="#saved" data-route="saved">Saved</a>
+      </nav>
+
+      <div class="topbar-actions">
+
+        <button
+          class="icon-button theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch theme"
+          title="Switch theme"
+        >
+          <svg
+            class="theme-icon theme-icon-sun"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+
+          <svg
+            class="theme-icon theme-icon-moon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+          </svg>
+        </button>
+
+        <button
+          class="desktop-menu-button"
+          id="desktopMenuButton"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </header>
+
+
+    <!-- DESKTOP SLIDE MENU -->
+    <div class="desktop-menu" id="desktopMenu" aria-hidden="true">
+      <div class="desktop-menu-inner">
+
+        <a href="#home" data-route="home">Home</a>
+        <a href="#studio" data-route="studio">Color Studio</a>
+        <a href="#palettes" data-route="palettes">Palettes</a>
+        <a href="#accessibility" data-route="accessibility">Accessibility</a>
+        <a href="#extract" data-route="extract">Extract Colors</a>
+        <a href="#saved" data-route="saved">Saved Colors</a>
+
+      </div>
+    </div>
+
+
+    <!-- =========================
+         PAGE AREA
+    ========================== -->
+
+    <main class="page-shell">
+
+
+      <!-- =========================
+           HOME PAGE
+      ========================== -->
+
+      <section class="app-page page-home" id="page-home" data-page="home">
+
+        <div class="hero">
+
+          <div class="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            Professional color toolkit
+          </div>
+
+          <h1 class="hero-title" id="heroTitle" aria-label="Find colors that work">
+            <span class="hero-word">
+              <span class="hero-letter">F</span>
+              <span class="hero-letter">i</span>
+              <span class="hero-letter">n</span>
+              <span class="hero-letter">d</span>
+            </span>
+
+            <span class="hero-word">
+              <span class="hero-letter">c</span>
+              <span class="hero-letter">o</span>
+              <span class="hero-letter">l</span>
+              <span class="hero-letter">o</span>
+              <span class="hero-letter">r</span>
+              <span class="hero-letter">s</span>
+            </span>
+
+            <span class="hero-word">
+              <span class="hero-letter">t</span>
+              <span class="hero-letter">h</span>
+              <span class="hero-letter">a</span>
+              <span class="hero-letter">t</span>
+            </span>
+
+            <span class="hero-word">
+              <span class="hero-letter">w</span>
+              <span class="hero-letter">o</span>
+              <span class="hero-letter">r</span>
+              <span class="hero-letter">k</span>
+              <span class="hero-letter">.</span>
+            </span>
+          </h1>
+
+          <p class="hero-description">
+            Create, compare, test and extract colors from one clean workspace.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#studio" class="primary-button" data-route="studio">
+              Start Creating
+              <span class="button-arrow">→</span>
+            </a>
+
+          </div>
+
+          <div class="hero-visual" aria-label="ColorLab color range preview">
+            <div class="hero-swatch hero-swatch-1"><span>#81B29A</span></div>
+            <div class="hero-swatch hero-swatch-2"><span>#A8CDBA</span></div>
+            <div class="hero-swatch hero-swatch-3"><span>#D8E7DE</span></div>
+            <div class="hero-swatch hero-swatch-4"><span>#F2E9D8</span></div>
+            <div class="hero-swatch hero-swatch-5"><span>#3D405B</span></div>
+          </div>
+
+        </div>
+
+
+
+      </section>
+
+
+      <!-- =========================
+           COLOR STUDIO PAGE
+      ========================== -->
+
+      <section class="app-page" id="page-studio" data-page="studio">
+
+        <div class="page-header">
+          <div>
+            <span class="mini-label">COLOR / STUDIO</span>
+            <h1>Color Studio</h1>
+            <p>Choose a color visually or enter an exact HEX value.</p>
+          </div>
+
+          <button
+            class="secondary-button"
+            id="studioRandom"
+            type="button"
+          >
+            Random color
+          </button>
+        </div>
+
+
+        <div class="studio-layout">
+
+          <!-- PICKER -->
+          <div class="card picker-card">
+
+            <div class="card-title-row">
+              <div>
+                <span class="mini-label">PICK</span>
+                <h2>Visual picker</h2>
+              </div>
+
+              <span class="picker-value" id="pickerValue">#81B29A</span>
+            </div>
+
+            <div class="picker-wrap">
+
+              <div
+                class="color-square"
+                id="colorSquare"
+                role="slider"
+                aria-label="Color saturation and lightness"
+                tabindex="0"
+              >
+                <div class="square-handle" id="squareHandle"></div>
+              </div>
+
+              <div
+                class="hue-track"
+                id="hueTrack"
+                role="slider"
+                aria-label="Hue"
+                tabindex="0"
+              >
+                <div class="hue-handle" id="hueHandle"></div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- COLOR DETAILS -->
+          <div class="card details-card">
+
+            <div class="selected-color">
+              <div
+                class="selected-swatch"
+                id="selectedSwatch"
+              ></div>
+
+              <div>
+                <span class="mini-label">SELECTED</span>
+                <strong id="selectedHex">#81B29A</strong>
+              </div>
+            </div>
+
+
+            <div class="value-list">
+
+              <button class="value-row copy-value" type="button" data-copy-target="studioHex">
+                <span>HEX</span>
+                <strong id="studioHex">#81B29A</strong>
+                <span>Copy</span>
+              </button>
+
+              <button class="value-row copy-value" type="button" data-copy-target="studioRgb">
+                <span>RGB</span>
+                <strong id="studioRgb">129, 178, 154</strong>
+                <span>Copy</span>
+              </button>
+
+              <button class="value-row copy-value" type="button" data-copy-target="studioHsl">
+                <span>HSL</span>
+                <strong id="studioHsl">148, 24%, 60%</strong>
+                <span>Copy</span>
+              </button>
+
+              <button class="value-row copy-value" type="button" data-copy-target="studioOklch">
+                <span>OKLCH</span>
+                <strong id="studioOklch">0.70 0.08 156</strong>
+                <span>Copy</span>
+              </button>
+
+            </div>
+
+
+            <div class="manual-color">
+
+              <label for="hexInput">Exact HEX</label>
+
+              <div class="input-action-row">
+                <input
+                  id="hexInput"
+                  type="text"
+                  value="#81B29A"
+                  maxlength="7"
+                  autocomplete="off"
+                  spellcheck="false"
+                  aria-label="HEX color"
+                >
+
+                <button
+                  class="primary-button"
+                  id="applyHex"
+                  type="button"
+                >
+                  Apply
+                </button>
+              </div>
+
+              <p class="input-error" id="hexError"></p>
+
+            </div>
+
+
+            <button
+              class="primary-button full-button"
+              id="saveStudioColor"
+              type="button"
+            >
+              Save color
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- QUICK COLORS -->
+        <div class="card quick-colors-card">
+
+          <div class="card-title-row">
+            <div>
+              <span class="mini-label">QUICK COLORS</span>
+              <h2>Start from a color</h2>
+            </div>
+          </div>
+
+          <div class="quick-color-grid" id="quickColorGrid">
+
+            <button class="quick-color" type="button" data-color="#81B29A">
+              <span style="background:#81B29A"></span>
+              <b>#81B29A</b>
+            </button>
+
+            <button class="quick-color" type="button" data-color="#E07A5F">
+              <span style="background:#E07A5F"></span>
+              <b>#E07A5F</b>
+            </button>
+
+            <button class="quick-color" type="button" data-color="#3D405B">
+              <span style="background:#3D405B"></span>
+              <b>#3D405B</b>
+            </button>
+
+            <button class="quick-color" type="button" data-color="#F2CC8F">
+              <span style="background:#F2CC8F"></span>
+              <b>#F2CC8F</b>
+            </button>
+
+            <button class="quick-color" type="button" data-color="#2A9D8F">
+              <span style="background:#2A9D8F"></span>
+              <b>#2A9D8F</b>
+            </button>
+
+            <button class="quick-color" type="button" data-color="#264653">
+              <span style="background:#264653"></span>
+              <b>#264653</b>
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+
+
+            <!-- =========================
+           PALETTES PAGE
+      ========================== -->
+
+      <section class="app-page" id="page-palettes" data-page="palettes">
+
+        <div class="page-header">
+          <div>
+            <span class="mini-label">PALETTES</span>
+            <h1>Build a palette</h1>
+            <p>Use one base color and generate different directions.</p>
+          </div>
+        </div>
+
+
+        <div class="card palette-controls">
+
+          <label for="paletteBase">Base color</label>
+
+          <div class="palette-input-row">
+
+            <input
+              id="paletteBase"
+              type="text"
+              value="#81B29A"
+              maxlength="7"
+              autocomplete="off"
+              spellcheck="false"
+            >
+
+            <button
+              class="secondary-button"
+              id="useCurrentPaletteColor"
+              type="button"
+            >
+              Use current
+            </button>
+
+            <button
+              class="primary-button"
+              id="generatePalette"
+              type="button"
+            >
+              Generate
+            </button>
+
+          </div>
+
+          <p class="input-error" id="paletteError"></p>
+
+
+          <div class="mode-switch" role="group" aria-label="Palette style">
+
+            <button
+              class="mode-button active"
+              type="button"
+              data-palette-mode="balanced"
+            >
+              Balanced
+            </button>
+
+            <button
+              class="mode-button"
+              type="button"
+              data-palette-mode="soft"
+            >
+              Soft
+            </button>
+
+            <button
+              class="mode-button"
+              type="button"
+              data-palette-mode="bold"
+            >
+              Bold
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="card palette-result">
+
+          <div class="card-title-row">
+            <div>
+              <span class="mini-label">RESULT</span>
+              <h2 id="paletteTitle">Balanced palette</h2>
+            </div>
+
+            <div class="card-actions">
+              <button
+                class="small-action"
+                id="copyPalette"
+                type="button"
+              >
+                Copy all
+              </button>
+              <button
+                class="primary-button small-action"
+                id="savePalette"
+                type="button"
+              >
+                Save palette
+              </button>
+            </div>
+          </div>
+
+
+          <div class="palette-strip" id="paletteStrip"></div>
+
+          <div class="palette-codes" id="paletteCodes"></div>
+
+        </div>
+
+
+      </section>
+
+
+      <!-- =========================
+           ACCESSIBILITY PAGE
+      ========================== -->
+
+      <section class="app-page" id="page-accessibility" data-page="accessibility">
+
+        <div class="page-header">
+          <div>
+            <span class="mini-label">ACCESSIBILITY</span>
+            <h1>Contrast checker</h1>
+            <p>Test foreground and background combinations against WCAG targets.</p>
+          </div>
+        </div>
+
+
+        <div class="accessibility-layout">
+
+          <div class="card contrast-controls">
+
+            <div class="contrast-input">
+
+              <label for="foregroundInput">Foreground</label>
+
+              <div class="color-input-line">
+                <span class="input-swatch" id="foregroundSwatch"></span>
+
+                <input
+                  id="foregroundInput"
+                  type="text"
+                  value="#000000"
+                  maxlength="7"
+                  autocomplete="off"
+                  spellcheck="false"
+                >
+              </div>
+
+            </div>
+
+
+            <button
+              class="swap-button"
+              id="swapContrast"
+              type="button"
+              aria-label="Swap foreground and background"
+              title="Swap colors"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 7h11"></path>
+                <path d="m14 4 4 3-4 3"></path>
+                <path d="M17 17H6"></path>
+                <path d="m10 14-4 3 4 3"></path>
+              </svg>
+            </button>
+
+
+            <div class="contrast-input">
+
+              <label for="backgroundInput">Background</label>
+
+              <div class="color-input-line">
+                <span class="input-swatch" id="backgroundSwatch"></span>
+
+                <input
+                  id="backgroundInput"
+                  type="text"
+                  value="#FFFFFF"
+                  maxlength="7"
+                  autocomplete="off"
+                  spellcheck="false"
+                >
+              </div>
+
+            </div>
+
+
+            <p class="input-error" id="contrastError"></p>
+
+          </div>
+
+
+          <div class="card contrast-preview-card">
+
+            <span class="mini-label">PREVIEW</span>
+
+            <div
+              class="contrast-preview"
+              id="contrastPreview"
+            >
+              <strong>Readable text</strong>
+              <span>Normal interface text preview</span>
+              <button type="button">Example button</button>
+            </div>
+
+          </div>
+
+
+          <div class="card contrast-result">
+
+            <span class="mini-label">CONTRAST RATIO</span>
+
+            <div class="contrast-ratio" id="contrastRatio">21.00 : 1</div>
+
+            <div class="wcag-grid">
+
+              <div class="wcag-card" id="wcagNormalAA">
+                <strong>Normal text</strong>
+                <span>AA · 4.5:1</span>
+              </div>
+
+              <div class="wcag-card" id="wcagNormalAAA">
+                <strong>Normal text</strong>
+                <span>AAA · 7:1</span>
+              </div>
+
+              <div class="wcag-card" id="wcagLargeAA">
+                <strong>Large text</strong>
+                <span>AA · 3:1</span>
+              </div>
+
+              <div class="wcag-card" id="wcagLargeAAA">
+                <strong>Large text</strong>
+                <span>AAA · 4.5:1</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           EXTRACT PAGE
+      ========================== -->
+
+      <section class="app-page" id="page-extract" data-page="extract">
+
+        <div class="page-header">
+          <div>
+            <span class="mini-label">EXTRACT</span>
+            <h1>Extract colors</h1>
+            <p>Upload an image and find its meaningful color clusters.</p>
+          </div>
+        </div>
+
+
+        <div class="extract-layout">
+
+          <div class="card upload-card">
+
+            <input
+              type="file"
+              id="imageInput"
+              accept="image/png,image/jpeg,image/webp,image/gif"
+              hidden
+            >
+
+            <button
+              class="upload-zone"
+              id="uploadZone"
+              type="button"
+            >
+
+              <span class="upload-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 16V4"></path>
+                  <path d="m7 9 5-5 5 5"></path>
+                  <path d="M5 20h14"></path>
+                </svg>
+              </span>
+
+              <strong>Choose an image</strong>
+              <span>PNG, JPG, WEBP or GIF</span>
+              <small>Tap to browse or drop an image here</small>
+
+            </button>
+
+          </div>
+
+
+          <div class="card image-preview-card hidden" id="imagePreviewCard">
+
+            <div class="card-title-row">
+              <div>
+                <span class="mini-label">SOURCE</span>
+                <h2>Image preview</h2>
+              </div>
+
+              <div class="card-actions">
+                <button
+                  class="small-action"
+                  id="analyzeImage"
+                  type="button"
+                >
+                  Analyze image
+                </button>
+                <button
+                  class="small-action"
+                  id="clearImage"
+                  type="button"
+                >
+                  Clear
+                </button>
+              </div>
+            </div>
+
+            <div class="image-preview-wrap">
+              <canvas id="imageCanvas"></canvas>
+            </div>
+
+          </div>
+
+
+          <div class="card extracted-card hidden" id="extractedCard">
+
+            <div class="card-title-row">
+
+              <div>
+                <span class="mini-label">COLORS FOUND</span>
+                <h2 id="extractedCount">0 meaningful colors</h2>
+              </div>
+
+              <button
+                class="small-action"
+                id="copyExtracted"
+                type="button"
+              >
+                Copy all
+              </button>
+
+            </div>
+
+            <div
+              class="extracted-grid"
+              id="extractedGrid"
+            ></div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           SAVED PAGE
+      ========================== -->
+
+      <section class="app-page" id="page-saved" data-page="saved">
+
+        <div class="page-header">
+
+          <div>
+            <span class="mini-label">SAVED</span>
+            <h1>Your colors</h1>
+            <p>Keep useful colors available across your workspace.</p>
+          </div>
+
+          <button
+            class="secondary-button danger-button"
+            id="clearSaved"
+            type="button"
+          >
+            Clear all
+          </button>
+
+        </div>
+
+
+        <div class="card saved-card">
+
+          <div
+            class="saved-empty"
+            id="savedEmpty"
+          >
+            <span class="empty-number">00</span>
+            <h2>No saved colors yet</h2>
+            <p>Save a color from Color Studio or Extract.</p>
+
+            <a
+              class="primary-button"
+              href="#studio"
+              data-route="studio"
+            >
+              Open Color Studio
+            </a>
+          </div>
+
+
+          <div
+            class="saved-grid"
+            id="savedGrid"
+          ></div>
+
+          <div class="saved-section-divider" id="savedPaletteSection">
+            <div class="card-title-row">
+              <div>
+                <span class="mini-label">SAVED PALETTES</span>
+                <h2>Your palettes</h2>
+              </div>
+            </div>
+            <div class="saved-palette-grid" id="savedPaletteGrid"></div>
+            <p class="saved-palette-empty" id="savedPaletteEmpty">No saved palettes yet.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- =========================
+         MOBILE NAV
+    ========================== -->
+
+    <div class="mobile-nav-shell">
+
+      <div class="mobile-nav-panel" id="mobileNavPanel">
+
+        <a href="#home" data-route="home" class="mobile-nav-item">
+          <span class="mobile-nav-number">01</span>
+          <span>Home</span>
+        </a>
+
+        <a href="#studio" data-route="studio" class="mobile-nav-item">
+          <span class="mobile-nav-number">02</span>
+          <span>Color</span>
+        </a>
+
+        <a href="#palettes" data-route="palettes" class="mobile-nav-item">
+          <span class="mobile-nav-number">03</span>
+          <span>Palettes</span>
+        </a>
+
+        <a href="#accessibility" data-route="accessibility" class="mobile-nav-item">
+          <span class="mobile-nav-number">04</span>
+          <span>Access</span>
+        </a>
+
+        <a href="#extract" data-route="extract" class="mobile-nav-item">
+          <span class="mobile-nav-number">05</span>
+          <span>Extract</span>
+        </a>
+
+        <a href="#saved" data-route="saved" class="mobile-nav-item">
+          <span class="mobile-nav-number">06</span>
+          <span>Saved</span>
+        </a>
+
+      </div>
+
+
+      <button
+        class="mobile-nav-toggle"
+        id="mobileNavToggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span class="nav-toggle-line line-one"></span>
+        <span class="nav-toggle-line line-two"></span>
+        <span class="nav-toggle-center"></span>
+      </button>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div
+      class="toast"
+      id="toast"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
